@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f; // Speed of the player
     public float jumpHeight = 5f; // Height of the jump
-    // You can adjust the speed and jump height as needed
+                                  // You can adjust the speed and jump height as needed
+    public Animator animator; // Reference to the Animator component
     private float movement; // Variable to store horizontal movement input
     private bool facingRight = true; // To track the player's facing direction
     private bool isGrounded = true; // To check if the player is on the ground
@@ -40,9 +42,28 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
             isGrounded = false; // Set isGrounded to false when jumping
+            animator.SetBool("Jump", true); // Set jump animation
+        }
+
+        // Set animator parameters walk
+        if (Mathf.Abs(movement) > .1f)
+        {
+            animator.SetFloat("Walk", 1f);
+        }
+        else if (movement < .1f)
+        {
+            animator.SetFloat("Walk", 0f);
+        }
+
+        // Set animator parameters attack
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Attack");
         }
     }
 
+    // Method to handle jumping
+    // This method applies an upward force to the player's Rigidbody2D component
     void Jump()
     {
         body.AddForce(new Vector2(0f, jumpHeight), ForceMode2D.Impulse);
@@ -54,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true; // Set isGrounded to true when touching the ground
+            animator.SetBool("Jump", false); // Reset jump animation
         }
     }
 }
-// menit 47:18
