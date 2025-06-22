@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
+{   
     public float speed = 5f; // Speed of the player
     public float jumpHeight = 5f; // Height of the jump
                                   // You can adjust the speed and jump height as needed
