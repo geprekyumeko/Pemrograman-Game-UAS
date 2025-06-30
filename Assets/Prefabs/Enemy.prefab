@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.16, y: -0.37, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -948014221, guid: da1d673558fcac0418bf95bc7c2f9de6, type: 3}
+  m_Sprite: {fileID: -982317108, guid: 40aa7460a0c552b4dad6ae706b3d7af0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 2}
+  m_Size: {x: 6, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -147,18 +147,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1192677, y: -0.27823314}
+  m_Offset: {x: 0.24791455, y: -0.54511523}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 2.1333334}
-    newSize: {x: 3, y: 2}
+    oldSize: {x: 6, y: 4}
+    newSize: {x: 6, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7356994, y: 1.5768669}
+  m_Size: {x: 1.2820344, y: 2.9359818}
   m_EdgeRadius: 0
 --- !u!114 &9050221903050432988
 MonoBehaviour:
@@ -172,9 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd83ac2acc8b7a743b1d29645adf785c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  jumpForce: 5
-  animator: {fileID: 4476422712424693223}
+  player: {fileID: 0}
 --- !u!95 &4476422712424693223
 Animator:
   serializedVersion: 5
@@ -185,7 +183,7 @@ Animator:
   m_GameObject: {fileID: 2916765117267363127}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e323c0c9a8c44c644bf9e1d2a8bea796, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8e2cf108006392549ab6788e7f6eea67, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
