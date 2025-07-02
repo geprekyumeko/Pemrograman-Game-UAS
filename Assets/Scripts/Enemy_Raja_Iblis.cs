@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy_Skeleton : MonoBehaviour
+public class Enemy_Raja_Iblis : MonoBehaviour
 {
     public Transform player;
     public float patrolSpeed = 2.5f; // Speed at which the skeleton patrols
