@@ -12,7 +12,7 @@ public class Enemy_Skeleton : MonoBehaviour
     public Transform detectPoint; // Point to detect obstacles
     public float Distance = 0.4f; // Distance to check for obstacles
     public LayerMask whatIsGround; // Layer mask to identify ground and obstacles
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +28,32 @@ public class Enemy_Skeleton : MonoBehaviour
         }
         else
         {
-            transform.Translate(Vector2.left* Time.deltaTime * patrolSpeed);
+            transform.Translate(Vector2.left * Time.deltaTime * patrolSpeed);
 
-            //Physics2D.Raycast()
+            RaycastHit2D hit = Physics2D.Raycast(detectPoint.position, Vector2.down, Distance, whatIsGround);
+            if (hit == false)
+            {
+                if (facingLeft == true)
+                {
+                    transform.eulerAngles = new Vector3(0f, -180f, 0f); // Flip the skeleton to face right
+                    facingLeft = false; // Update facing direction
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(0f, -0f, 0f); // Flip the skeleton to face right
+                    facingLeft = true; // Update facing direction
+                }
+            }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (detectPoint == null)
+        {
+            return; // Exit if detectPoint is not assigned
+        }
+        Gizmos.color = Color.red; // Set the color for the Gizmo
+        Gizmos.DrawRay(detectPoint.position, Vector2.down * Distance);
     }
 }
