@@ -5,8 +5,10 @@ using UnityEngine;
 public class Enemy_Skeleton : MonoBehaviour
 {
     public Transform player;
-    public float patrolSpeed = 1.5f; // Speed at which the skeleton patrols
+    public float patrolSpeed = 2.5f; // Speed at which the skeleton patrols
     public float attackRange = 5f; // Range within which the skeleton can attack
+    public float chaseSpeed = 3f; // Speed at which the skeleton chases the player
+    public float retrieveDistance = 2.5f;
 
     private bool facingLeft;
     public Transform detectPoint; // Point to detect obstacles
@@ -24,7 +26,24 @@ public class Enemy_Skeleton : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
+            if (transform.position.x < player.position.x && facingLeft == true)
+            {
+                transform.eulerAngles = new Vector3(0f, -180f, 0f);
+                facingLeft = false;
+            }
+            else if (player.position.x <transform.position.x)
+            {
+                transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                facingLeft = true;
+            }
+            if (Vector2.Distance(transform.position, player.position) > retrieveDistance)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
+                }
+                else
+                {
 
+                }
         }
         else
         {
