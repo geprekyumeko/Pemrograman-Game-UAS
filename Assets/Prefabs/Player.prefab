@@ -66,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1698250634051922040}
+  - {fileID: 5133786561581974668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8319817356889006727
@@ -225,12 +226,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4e88ef5caf01b41be1d9f4426b821c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 5
+  explosionEffectPrefab: {fileID: 9179611669268854398, guid: e448fe5479e865f47a66b7b62995a4f4, type: 3}
+  explosionPosition: {fileID: 5133786561581974668}
   speed: 7
   jumpHeight: 7
   animator: {fileID: 49938063957931922}
   body: {fileID: 7988982823140814154}
   attackPosition: {fileID: 1698250634051922040}
-  attackRadius: 1
+  attackRadius: 1.15
   attackLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!1 &5893169373249992430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5133786561581974668}
+  m_Layer: 7
+  m_Name: ExplosionPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5133786561581974668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893169373249992430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06, y: 0.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4487057988602734497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

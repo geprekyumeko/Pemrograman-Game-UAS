@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
     [Header("Player Health")]
     public int maxHealth = 5; // Maximum health of the player
+    public GameObject explosionEffectPrefab; // Prefab for explosion effect
+    public Transform explosionPosition; 
 
     public float speed = 5f; // Speed of the player
     public float jumpHeight = 5f; // Height of the jump
@@ -150,5 +152,9 @@ public class Player : MonoBehaviour
     void Die()
     {
         Debug.Log(this.gameObject.name + " Bowo has died.");
+        FindAnyObjectByType<GameManager>().isGameActive = false; // Set the game to inactive
+        GameObject tempExplosionEffectPrefab = Instantiate(explosionEffectPrefab, explosionPosition.position, quaternion.identity); // Instantiate explosion effect at the enemy position
+        Destroy(tempExplosionEffectPrefab, .8f);
+        Destroy(this.gameObject);
     }
 }

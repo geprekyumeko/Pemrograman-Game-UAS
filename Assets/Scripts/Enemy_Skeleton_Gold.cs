@@ -38,8 +38,14 @@ public class Enemy_Skeleton_Gold : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FindAnyObjectByType<GameManager>().isGameActive == false)
+        {
+            animator.SetBool("Attack", false);
+            return; 
+        }
+
         if (maxHealth <= 0)
-        {   
+        {
             Die();
         }
 

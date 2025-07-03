@@ -174,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7d233f6a39b8b4c89c9caaa8512126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 3
+  explosionEffectPrefab: {fileID: 9179611669268854398, guid: e448fe5479e865f47a66b7b62995a4f4, type: 3}
   player: {fileID: 0}
   patrolSpeed: 3
   attackRange: 7
