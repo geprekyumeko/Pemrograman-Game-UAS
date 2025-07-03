@@ -486,11 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6260704197997638746, guid: e2ef48a8fe89dd5489ee2d63301df15e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.5
+      value: 13.73
       objectReference: {fileID: 0}
     - target: {fileID: 6260704197997638746, guid: e2ef48a8fe89dd5489ee2d63301df15e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7
+      value: 2.1400003
       objectReference: {fileID: 0}
     - target: {fileID: 6260704197997638746, guid: e2ef48a8fe89dd5489ee2d63301df15e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -539,11 +539,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 351680888937377760, guid: a30fabfac19900c45bbbf0f33f30046a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.2
+      value: 16.33
       objectReference: {fileID: 0}
     - target: {fileID: 351680888937377760, guid: a30fabfac19900c45bbbf0f33f30046a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.8
+      value: 2.46
       objectReference: {fileID: 0}
     - target: {fileID: 351680888937377760, guid: a30fabfac19900c45bbbf0f33f30046a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1534966264}
+    - target: {fileID: 455133603036755025, guid: a30fabfac19900c45bbbf0f33f30046a, type: 3}
+      propertyPath: explosionEffectPrefab
+      value: 
+      objectReference: {fileID: 9179611669268854398, guid: e448fe5479e865f47a66b7b62995a4f4, type: 3}
     - target: {fileID: 5060968560666527317, guid: a30fabfac19900c45bbbf0f33f30046a, type: 3}
       propertyPath: m_Name
       value: Skeleton_Gold
@@ -598,6 +602,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580049445875680840, guid: 605e5a112ee3ef441836ded83a746d42, type: 3}
+      propertyPath: attackRadius
+      value: 1.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4487057988602734497, guid: 605e5a112ee3ef441836ded83a746d42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -732,17 +740,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1534966264}
+    - target: {fileID: 486374595434978348, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
+      propertyPath: attackLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 5936029823743687923, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
       propertyPath: m_Name
       value: Raja_Iblis
       objectReference: {fileID: 0}
     - target: {fileID: 8070997886546210319, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.03
+      value: 5.95
       objectReference: {fileID: 0}
     - target: {fileID: 8070997886546210319, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.23
+      value: 14.14
       objectReference: {fileID: 0}
     - target: {fileID: 8070997886546210319, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
       propertyPath: m_LocalPosition.z
@@ -775,14 +787,6 @@ PrefabInstance:
     - target: {fileID: 8070997886546210319, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385080330863378823, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385080330863378823, guid: e4300807b5bd9134b8add3979fd98618, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

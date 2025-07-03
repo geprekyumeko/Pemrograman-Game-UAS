@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Enemy_Skeleton : MonoBehaviour
 {
     [Header("Health")]
     public int maxHealth = 3; // Maximum health of the skeleton
+    public GameObject explosionEffectPrefab; // Prefab for explosion effect
+
 
     public Transform player;
     public float patrolSpeed = 2.5f; // Speed at which the skeleton patrols
@@ -125,5 +128,8 @@ public class Enemy_Skeleton : MonoBehaviour
     void Die()
     {
         Debug.Log("Skeleton has died.");
+        GameObject tempExplosionEffectPrefab = Instantiate(explosionEffectPrefab, transform.position, quaternion.identity); // Instantiate explosion effect at the enemy position
+        Destroy(tempExplosionEffectPrefab, .8f);
+        Destroy(this.gameObject); // Destroy the Enemy game object
     }
 }
