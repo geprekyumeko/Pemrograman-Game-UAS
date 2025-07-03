@@ -18,6 +18,10 @@ public class Enemy_Skeleton : MonoBehaviour
 
     private Animator animator;
 
+    [Header("Attack")]
+    public Transform attackPosition; // Position where the attack will be performed
+    public float attackRadius = 1f; // Radius of the attack area
+    public LayerMask attackLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,13 +75,29 @@ public class Enemy_Skeleton : MonoBehaviour
         }
     }
 
+    public void Attack()
+    {
+        Collider2D callInfo = Physics2D.OverlapCircle(attackPosition.position, attackRadius, attackLayer);
+        if (callInfo)
+        {
+            Debug.Log(callInfo.gameObject.name + "You have been attacked by the Golden Skeleton!");
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (detectPoint == null)
         {
             return; // Exit if detectPoint is not assigned
         }
-        Gizmos.color = Color.red; // Set the color for the Gizmo
+        Gizmos.color = Color.yellow; // Set the color for the Gizmo
         Gizmos.DrawRay(detectPoint.position, Vector2.down * Distance);
+
+        if (attackPosition == null)
+        {
+            return; // Exit if attackPosition is not assigned
+        }
+        Gizmos.color = Color.red; // Set the color for the attack radius
+        Gizmos.DrawWireSphere(attackPosition.position, attackRadius); // Draw the attack radius
     }
 }
