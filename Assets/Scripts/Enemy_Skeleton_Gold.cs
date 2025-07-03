@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Enemy_Skeleton_Gold : MonoBehaviour
 {
+    [Header("Health")]
+    public int maxHealth = 3; // Maximum health of the skeleton
+
     public Transform player;
     public float patrolSpeed = 2.5f; // Speed at which the skeleton patrols
     public float attackRange = 5f; // Range within which the skeleton can attack
@@ -80,8 +83,18 @@ public class Enemy_Skeleton_Gold : MonoBehaviour
         Collider2D callInfo = Physics2D.OverlapCircle(attackPosition.position, attackRadius, attackLayer);
         if (callInfo)
         {
-            Debug.Log(callInfo.gameObject.name + "You have been attacked by the Skeleton!");
+            Debug.Log(callInfo.gameObject.name + "You have been attacked by the Golden Skeleton!");
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (maxHealth <= 0)
+        {
+            Debug.Log("Skeleton is already dead.");
+            return; // Exit if the skeleton is already dead
+        }
+        maxHealth -= damage;
     }
 
     private void OnDrawGizmosSelected()

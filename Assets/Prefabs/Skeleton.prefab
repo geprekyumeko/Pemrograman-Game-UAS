@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 309398510509183706}
   - component: {fileID: 2961564070704451381}
   - component: {fileID: 1212237421879050945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ MonoBehaviour:
   patrolSpeed: 3
   attackRange: 7
   chaseSpeed: 3
-  retrieveDistance: 2.5
+  retrieveDistance: 3
   detectPoint: {fileID: 3398624993793120002}
   Distance: 0.8
   whatIsGround:
