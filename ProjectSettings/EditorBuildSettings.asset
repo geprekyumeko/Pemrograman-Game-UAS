@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PilihanLevel.unity
     guid: 416f3c73993765a4fb769677c097fcf1
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 02504fd983db85a47a4640b221d3d206
   m_configObjects: {}

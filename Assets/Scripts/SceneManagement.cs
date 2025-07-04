@@ -31,6 +31,15 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Level 3");
     }
 
+    //Tombol Scene Victory
+    public void NextLevelButton()
+    {
+        SceneManager.LoadScene("PilihanLevel");
+    }
+    public void VictoryMenuButton()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
     //Tombol Scene Level 1
     public void RetryButton()

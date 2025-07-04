@@ -4,6 +4,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI; // Importing Unity UI namespace for Text component
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -156,7 +157,12 @@ public class Player : MonoBehaviour
             collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected"); // Trigger coin collection animation
             Destroy(collision.gameObject, 1f); // Destroy the coin after 1 second
         }
+        if (collision.gameObject.tag == "Checkpoint")
+        {
+            SceneManager.LoadScene("Victory"); // Load the Victory scene when reaching a checkpoint
+        }
     }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPosition == null)
