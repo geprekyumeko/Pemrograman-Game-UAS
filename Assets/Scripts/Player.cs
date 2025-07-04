@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Text healthText; // Reference to the UI Text component to display health
     private int currentCoin;
     public Text coinText; // Reference to the UI Text component to display coins
+    public GameObject gameOverUI; // Reference to the Game Over UI panel
 
     public float speed = 5f; // Speed of the player
     public float jumpHeight = 5f; // Height of the jump
@@ -169,6 +170,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         Debug.Log(this.gameObject.name + " Bowo has died.");
+        gameOverUI.SetActive(true); // Show the Game Over UI panel
         FindAnyObjectByType<GameManager>().isGameActive = false; // Set the game to inactive
         GameObject tempExplosionEffectPrefab = Instantiate(explosionEffectPrefab, explosionPosition.position, quaternion.identity); // Instantiate explosion effect at the enemy position
         Destroy(tempExplosionEffectPrefab, .8f);

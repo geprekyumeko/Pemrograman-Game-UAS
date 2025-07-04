@@ -1307,6 +1307,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5568e3373e476b54cb8ebcdc2f3a1056, type: 3}
+--- !u!1 &1235334750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8860819334516151144, guid: defa7ba49e552bf44bbb4fbf41626d4a, type: 3}
+  m_PrefabInstance: {fileID: 5702323364918152531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1238191201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1843,6 +1848,10 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 1302882896}
+    - target: {fileID: 3580049445875680840, guid: 605e5a112ee3ef441836ded83a746d42, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1235334750}
     - target: {fileID: 3580049445875680840, guid: 605e5a112ee3ef441836ded83a746d42, type: 3}
       propertyPath: healthText
       value: 
