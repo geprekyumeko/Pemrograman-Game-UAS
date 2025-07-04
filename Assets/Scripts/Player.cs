@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI; // Importing Unity UI namespace for Text component
 
 public class Player : MonoBehaviour
 {
     [Header("Player Health")]
     public int maxHealth = 5; // Maximum health of the player
     public GameObject explosionEffectPrefab; // Prefab for explosion effect
-    public Transform explosionPosition; 
+    public Transform explosionPosition;
+    public Text healthText; // Reference to the UI Text component to display health
 
     public float speed = 5f; // Speed of the player
     public float jumpHeight = 5f; // Height of the jump
@@ -36,6 +38,8 @@ public class Player : MonoBehaviour
         {
             Die(); // Call the Die method if health is zero or less
         }
+
+        healthText.text = maxHealth.ToString();
 
         movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0f, 0f) * speed * Time.deltaTime;
