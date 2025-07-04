@@ -107,8 +107,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1339081725
-  m_SortingLayer: 0
+  m_SortingLayerID: -845538171
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -891506047, guid: bed81b7896ae2c8438d18e2b9510bf66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -229,6 +229,7 @@ MonoBehaviour:
   maxHealth: 5
   explosionEffectPrefab: {fileID: 9179611669268854398, guid: e448fe5479e865f47a66b7b62995a4f4, type: 3}
   explosionPosition: {fileID: 5133786561581974668}
+  healthText: {fileID: 0}
   speed: 7
   jumpHeight: 7
   animator: {fileID: 49938063957931922}

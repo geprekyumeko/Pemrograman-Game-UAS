@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public GameObject explosionEffectPrefab; // Prefab for explosion effect
     public Transform explosionPosition;
     public Text healthText; // Reference to the UI Text component to display health
+    private int currentCoin;
+    public Text coinText; // Reference to the UI Text component to display coins
 
     public float speed = 5f; // Speed of the player
     public float jumpHeight = 5f; // Height of the jump
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
     {
         facingRight = true;
         isGrounded = true;
+        currentCoin = 0; // Initialize current coin count
     }
 
     void Update()
@@ -39,7 +42,8 @@ public class Player : MonoBehaviour
             Die(); // Call the Die method if health is zero or less
         }
 
-        healthText.text = maxHealth.ToString();
+        healthText.text = maxHealth.ToString(); // Update the health text UI
+        coinText.text = currentCoin.ToString(); // Update the coin text UI
 
         movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0f, 0f) * speed * Time.deltaTime;
@@ -143,6 +147,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            currentCoin++;
+            collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected"); // Trigger coin collection animation
+            Destroy(collision.gameObject, 1f); // Destroy the coin after 1 second
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         if (attackPosition == null)
